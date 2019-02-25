@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/solid.css');
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+#editor {
+    float: left;
+}
+
+#lastmod {
+    float: right;
+}
+
+body {
+    background-color: #ddeaff;
+}

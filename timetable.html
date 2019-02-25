@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TimeTable</title>
+    <style>
+        .bg-green {
+            background-color: #00AA00
+        }
+
+        th {
+            color: #964B00
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 4px solid #0000aa;
+        }
+
+        #Monday {
+            color: #990000
+        }
+
+        #Tuesday {
+            color: #009900
+        }
+
+        #Wednesday {
+            color: #000999
+        }
+
+        #Thursday {
+            color: #999900
+        }
+
+        #Friday {
+            color: #990099
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="timetable.html">My TimeTable</a>
+            <div class="dropdown">
+                <button class="dropbtn">Tutorials
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Tutorial_1.html">Tute01</a>
+                    <a href="mydetails.html">Tute02</a>
+                    <a href="timetable.html">Tute03-A</a>
+                    <a href="myMedia.html">Tute03-B</a>
+                    <a href="tut4.html">Tute04</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">About/Contact
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="mydetails.html#pd">Personal details</a>
+                    <a href="mydetails.html#ed">Education details</a>
+                    <a href="mydetails.html#prd">Professional details</a>
+                    <a href="mydetails.html#ps">Personal skills</a>
+                    <a href="mydetails.html#pi">Personal interests</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h1>My TimeTable: Isala Piyarisi</h1>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="6">
+                    I am currently taking the following modules
+                    <ul>
+                        <li>Mathematics for Computing</li>
+                        <li>Programming Principles</li>
+                        <li>Computer Science Practice</li>
+                        <li>Web Design and Development</li>
+                        <li>Computer System Fundamentals</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>08:30 - 10:30</th>
+                <th>10:30 - 12:30</th>
+                <th>12:30 - 13:30</th>
+                <th>13:30 - 15:30</th>
+                <th>15:30 - 17:30</th>
+            </tr>
+        </thead>
+        <tbody style="text-align:center">
+            <tr id="Monday">
+                <th>Monday</th>
+                <td class="bg-green">FREE</td>
+                <td>Computer Science Practice</td>
+                <td rowspan="5">Lunch</td>
+                <td class="bg-green">FREE</td>
+                <td>Web Design and Development - Tutorial</td>
+            </tr>
+
+            <tr id="Tuesday">
+                <th>Tuesday</th>
+                <td>Mathematics for Computing</td>
+                <td>Computer Science Practice - Tutorial</td>
+                <td>Programming Principles I - Tutorial</td>
+                <td class="bg-green">FREE</td>
+            </tr>
+            <tr id="Wednesday">
+                <th>Wednesday</th>
+                <td class="bg-green">FREE</td>
+                <td>Programing Principles 1</td>
+                <td class="bg-green" colspan="2">FREE</td>
+            </tr>
+            <tr id="Thursday">
+                <th>Thursday</th>
+                <td>Programing Principles 1 - Tutorial</td>
+                <td>Computer Systems Fundamentals</td>
+                <td>Mathematics for Computing - Tutorial</td>
+                <td class="bg-green">FREE</td>
+            </tr>
+            <tr id="Friday">
+                <th>Friday</th>
+                <td>Computer System Fundamentals - Tutorial</td>
+                <td>Web Design and Development</td>
+                <td class="bg-green" colspan="2">FREE</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <footer>
+        <hr />
+        <p id="editor">Isala Piyarisi - 2018421</p>
+        <p id="lastmod">Last Modified: 11/02/2019</p>
+    </footer>
+</body>
+
+</html>
