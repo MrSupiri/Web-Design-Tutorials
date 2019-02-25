@@ -1,0 +1,25 @@
+nav {
+    margin-top: 20px;
+}
+
+nav>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav>ul>li {
+    margin-left: 150px;
+    display: inline;
+    text-decoration: none
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    color: #FF0000;
+}
+
+nav>ul>li>a:hover {
+    color: #0000FF;
+}
