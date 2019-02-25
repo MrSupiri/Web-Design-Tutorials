@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Tutorial 1</title>
+</head>
+<body>
+	<h1>Isala Piyarisi</h1>
+	<p>
+		<u>I am 19 Years old</u><br>
+		<i>I went to Richmond College</i><br>
+		<b>I am Full-Stack Developer</b><br>
+		<u>I am Tab Person</u><br>
+		My programming language of choice is Python3
+	</p>
+
+	<div>
+		<hr>
+		<a href="mailto:hello@isala.me">hello@isala.me</a>
+		<p id="last-update">Last Updated: </p>
+	</div>
+	<script>
+		let today = new Date();
+		let dd = today.getDate();
+		let mm = today.getMonth() + 1
+		const yyyy = today.getFullYear();
+
+		if (dd < 10) {
+		  dd = '0' + dd;
+		}
+
+		if (mm < 10) {
+		  mm = '0' + mm;
+		}
+
+		today = mm + '/' + dd + '/' + yyyy;
+		document.querySelector("#last-update").innerHTML = 'Last Updated: '+ today;
+	</script>
+</body>
+</html>
