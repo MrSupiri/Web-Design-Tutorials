@@ -1,0 +1,47 @@
+header{
+    text-align: center;
+    border: 3px solid #0000ff;
+    border-radius: 25px;
+    box-shadow: 10px 10px grey;
+}
+
+footer{
+    clear: both;
+    margin-top: 300px;
+    border: 3px solid #0000ff;
+}
+#col-1{
+    float: left;
+    width: 35%;
+    padding: 1%;
+}
+#col-2{
+    float: left;
+    width: 63%
+}
+
+.navlist{
+    list-style: none;
+}
+
+.navlist a{
+    text-decoration: none;
+}
+
+.navlist a:hover{
+    color: #f00;
+}
+
+#PewDiePie{
+    float: right;
+    padding-left: 10px;
+}
+
+.color-purple{
+    color: #724bff
+}
+
+.italic-bold{
+    font-weight: bold;
+    font-style: italic;
+}
