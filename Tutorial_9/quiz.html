@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz</title>
+    <style>
+        .form-label {
+            width: 170px;
+            display: inline-block;
+            margin-bottom: 10px;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        .text-green {
+            color: #336f00;
+        }
+
+        .text-red {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="startform">
+        <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your Name" required>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="level">Difficulty Level</label>
+            <div style="display: inline-block;">
+                <input id="level1" name="level" type="radio" value=0 required> Beginner<br />
+                <input id="level2" name="level" type="radio" value=1 required> Intermediate<br />
+                <input id="level3" name="level" type="radio" value=2 required> Advanced<br />
+            </div>
+        </div>
+        <button type="submit">Start</button>
+    </form>
+
+    <p>Current Score: <span id="score">0</span></p>
+    <p>Current Maximum Possiable Score: <span id="max_score">0</span></p>
+
+    <div id="results"></div>
+
+    <script>
+        let score = 0;
+        const levels = ['Beginner', 'Intermediate', 'Advanced']
+        const operations = ['+', '-', '*']
+        document.querySelector("#startform").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let level = 0;
+            for (let i = 1; i <= 3; i++) {
+                if (document.querySelector("#level" + i).checked) {
+                    level = i
+                    break
+                }
+            }
+
+            const ready = confirm("Howdy " + document.querySelector("#name").value +
+                '!,\nAre you sure you want to play this game in ' + levels[level - 1] + ' Level');
+            if (ready) {
+                startGame(level)
+            }
+        });
+
+        function startGame(level) {
+            // Reset the Game
+            score = 0
+            var resultsDiv = document.querySelector("#results");
+            while (resultsDiv.firstChild) {
+                resultsDiv.removeChild(resultsDiv.firstChild);
+            }
+            const body = document.querySelector("body")
+            body.style.backgroundColor = 'inherit'
+
+            for (let q = 0; q < 10; q++) {
+                if (level == 1) {
+                    if (!createQuestion(10, operations[Math.round(Math.random())])) {
+                        break
+                    }
+                }
+                if (level == 2) {
+                    if (!createQuestion(20, operations[randomInt(2) - 1])) {
+                        break
+                    }
+                }
+                if (level == 3) {
+                    if (!createQuestion(100, operations[randomInt(2) - 1])) {
+                        break
+                    }
+                }
+                window.document.querySelector("#score").innerText = score
+                window.document.querySelector("#max_score").innerText = score + (9 - q) * 2
+            }
+            if (score < 10) {
+                body.style.backgroundColor = '#ffb5b5'
+            } else {
+                body.style.backgroundColor = '#97fcb5'
+            }
+            const result = document.createElement("p");
+            result.innerText = "Your Score is " + score + " out of 20"
+            document.querySelector("#results").append(result);
+        }
+
+        function randomInt(int) {
+            return Math.round(Math.random() * int) + 1
+        }
+
+        function createQuestion(max, operation) {
+            const question = randomInt(max) + " " + operation + " " + randomInt(max)
+            const answer = prompt("What is " + question + " ?")
+            if (answer === null) {
+                return false
+            }
+            print2Div(question, answer, eval(question))
+            return true
+        }
+
+        function print2Div(question, answer, correct_answer) {
+            const result = document.createElement("p");
+            if (answer == correct_answer) {
+                result.innerText = question + " = " + answer + ' ...correct'
+                result.classList = "text-green"
+                score += 2
+            } else {
+                result.innerText = question + " = " + answer + ' ...incorrect, correct answer is ' + correct_answer
+                result.classList = "text-red"
+            }
+            document.querySelector("#results").append(result);
+        }
+    </script>
+</body>
+
+</html>
