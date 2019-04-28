@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tutorial 6</title>
+    <style>
+        .form-label {
+            width: 170px;
+            display: inline-block;
+            margin-bottom: 10px;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        fieldset {
+            margin-bottom: 10px;
+            background-color: #83bbe4;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Hotel reservation</legend>
+            <div class="form-group">
+                <label for="name" class="form-label">Name* :</label>
+                <input id="name" name="name" type="text" class="form-control" placeholder="Your Full Name" required
+                    autofocus />
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password* :</label>
+                <input id="password" name="password" type="password" class="form-control"
+                    placeholder="Password for future use" required />
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone* :</label>
+                <input id="phone" name="phone" type="text" class="form-control" placeholder="Your Telephone Number"
+                    required />
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email :</label>
+                <input id="email" name="email" type="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="arrival_date" class="form-label">Arrival date* :</label>
+                <input id="arrival_date" name="arrival_date" type="date" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="departure_date" class="form-label">Departure date *:</label>
+                <input id="departure_date" name="departure_date" type="date" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="room_type" class="form-label">Room Type* :</label>
+                <select id="room_type" name="room_type" class="form-control" required>
+                    <option>Select Room Type</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="semi-luxury">Semi Luxury</option>
+                    <option value="ac">A/C</option>
+                    <option value="no_av">Non A/C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lk_resident" class="form-label">Resident of Sri Lanka :</label>
+                <input id="lk_resident" name="lk_resident" type="radio" class="form-control" value="yes" />Yes
+                <input name="lk_resident" type="radio" class="form-control" value="no" />No
+            </div>
+            <div class="form-group">
+                <label for="Country" class="form-label">Country :</label>
+                <input id="Country" name="Country" list="countries" type="text" class="form-control" />
+                <datalist id="countries">
+                    <option value="Afghanistan" />
+                    <option value="Albania" />
+                    <option value="Algeria" />
+                    <option value="American Samoa" />
+                    <option value="Andorra" />
+                    <option value="Angola" />
+                    <option value="Anguilla" />
+                    <option value="Antarctica" />
+                    <option value="Antigua and Barbuda" />
+                </datalist>
+            </div>
+            <div class="form-group" required>
+                <label for="n_adults" class="form-label">Number of adults* :</label>
+                <input id="n_adults" name="n_adults" type="number" min="1" max="10" value="1" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="n_children" class="form-label">Number of children :</label>
+                <input id="n_children" name="n_children" type="number" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="comment" class="form-label">Questions / Comments :</label>
+                <textarea id="comment" name="comment" class="form-control"></textarea>
+            </div>
+            <div class="formphone-group">
+                <input name="agree" type="checkbox" class="form-control" required />
+                <span>I agree with terms and conditions*</span>
+            </div>
+        </fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+
+</html>
