@@ -15,12 +15,16 @@
             vertical-align: top;
         }
 
-        .text-green {
-            color: #336f00;
+        .bg-green {
+            background-color: #0eff4a;
         }
 
-        .text-red {
-            color: #ff0000;
+        .bg-clear {
+            background-color: inherit;
+        }
+
+        .bg-red {
+            background-color: #ff3535;
         }
     </style>
 </head>
@@ -76,7 +80,7 @@
                 resultsDiv.removeChild(resultsDiv.firstChild);
             }
             const body = document.querySelector("body")
-            body.style.backgroundColor = 'inherit'
+            body.classList = "bg-clear"
 
             for (let q = 0; q < 10; q++) {
                 if (level == 1) {
@@ -98,9 +102,9 @@
                 window.document.querySelector("#max_score").innerText = score + (9 - q) * 2
             }
             if (score < 10) {
-                body.style.backgroundColor = '#ffb5b5'
+                body.classList = "bg-red"
             } else {
-                body.style.backgroundColor = '#97fcb5'
+                body.classList = "bg-green"
             }
             const result = document.createElement("p");
             result.innerText = "Your Score is " + score + " out of 20"
@@ -125,11 +129,11 @@
             const result = document.createElement("p");
             if (answer == correct_answer) {
                 result.innerText = question + " = " + answer + ' ...correct'
-                result.classList = "text-green"
+                result.classList = "bg-green"
                 score += 2
             } else {
                 result.innerText = question + " = " + answer + ' ...incorrect, correct answer is ' + correct_answer
-                result.classList = "text-red"
+                result.classList = "bg-red"
             }
             document.querySelector("#results").append(result);
         }
