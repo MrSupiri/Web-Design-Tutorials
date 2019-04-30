@@ -6,103 +6,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tutorial 6</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            font-family: 'Acme', sans-serif;
+        }
+
+        body {
+            /* background pattern from https://leaverou.github.io/css3patterns/#cross */
+            background:
+                radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+                radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+                linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+                linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+            background-color: slategray;
+            background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+        }
+
         .form-label {
-            width: 170px;
+            width: 200px;
             display: inline-block;
             margin-bottom: 10px;
             height: 100%;
             vertical-align: top;
+            font-size: 20px;
+        }
+
+        .flex-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+        }
+
+        .form-continer {
+            width: 40%;
+            min-width: 500px;
+            justify-content: center;
+        }
+
+        .form-buttons {
+            width: 49%;
+        }
+
+        .form-control {
+            width: 50%;
+        }
+
+        .text-red {
+            color: #ff0000;
+        }
+
+        .btn {
+            display: inline-block;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            line-height: 1.5;
+            border-radius: .25rem;
+            font-size: 1.2rem;
+        }
+
+        .btn-green {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-red {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        header {
+            margin: 0;
+            text-align: center;
+            background-color: #28a745;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        legend {
+            font-size: 30px;
         }
 
         fieldset {
             margin-bottom: 10px;
-            background-color: #83bbe4;
+            background-color: #7e56f9b3;
         }
     </style>
 </head>
 
 <body>
-    <form>
-        <fieldset>
-            <legend>Hotel reservation</legend>
-            <div class="form-group">
-                <label for="name" class="form-label">Name* :</label>
-                <input id="name" name="name" type="text" class="form-control" placeholder="Your Full Name" required
-                    autofocus />
-            </div>
-            <div class="form-group">
-                <label for="password" class="form-label">Password* :</label>
-                <input id="password" name="password" type="password" class="form-control"
-                    placeholder="Password for future use" required />
-            </div>
-            <div class="form-group">
-                <label for="phone" class="form-label">Phone* :</label>
-                <input id="phone" name="phone" type="text" class="form-control" placeholder="Your Telephone Number"
-                    required />
-            </div>
-            <div class="form-group">
-                <label for="email" class="form-label">Email :</label>
-                <input id="email" name="email" type="email" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label for="arrival_date" class="form-label">Arrival date* :</label>
-                <input id="arrival_date" name="arrival_date" type="date" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="departure_date" class="form-label">Departure date *:</label>
-                <input id="departure_date" name="departure_date" type="date" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="room_type" class="form-label">Room Type* :</label>
-                <select id="room_type" name="room_type" class="form-control" required>
-                    <option>Select Room Type</option>
-                    <option value="luxury">Luxury</option>
-                    <option value="semi-luxury">Semi Luxury</option>
-                    <option value="ac">A/C</option>
-                    <option value="no_av">Non A/C</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="lk_resident" class="form-label">Resident of Sri Lanka :</label>
-                <input id="lk_resident" name="lk_resident" type="radio" class="form-control" value="yes" />Yes
-                <input name="lk_resident" type="radio" class="form-control" value="no" />No
-            </div>
-            <div class="form-group">
-                <label for="Country" class="form-label">Country :</label>
-                <input id="Country" name="Country" list="countries" type="text" class="form-control" />
-                <datalist id="countries">
-                    <option value="Afghanistan" />
-                    <option value="Albania" />
-                    <option value="Algeria" />
-                    <option value="American Samoa" />
-                    <option value="Andorra" />
-                    <option value="Angola" />
-                    <option value="Anguilla" />
-                    <option value="Antarctica" />
-                    <option value="Antigua and Barbuda" />
-                </datalist>
-            </div>
-            <div class="form-group" required>
-                <label for="n_adults" class="form-label">Number of adults* :</label>
-                <input id="n_adults" name="n_adults" type="number" min="1" max="10" value="1" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label for="n_children" class="form-label">Number of children :</label>
-                <input id="n_children" name="n_children" type="number" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label for="comment" class="form-label">Questions / Comments :</label>
-                <textarea id="comment" name="comment" class="form-control"></textarea>
-            </div>
-            <div class="formphone-group">
-                <input name="agree" type="checkbox" class="form-control" required />
-                <span>I agree with terms and conditions*</span>
-            </div>
-        </fieldset>
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-    </form>
+    <header>
+        <h1>Caesars Palace</h1>
+        <h2>Las Vegas</h2>
+    </header>
+    <div class="flex-box">
+        <form class="form-continer">
+            <fieldset>
+                <legend align="center">Hotel reservation</legend>
+                <div class="form-group">
+                    <label for="name" class="form-label">Name<span class="text-red">*</span> :</label>
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Your Full Name" required
+                        autofocus />
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password<span class="text-red">*</span> :</label>
+                    <input id="password" name="password" type="password" class="form-control"
+                        placeholder="Password for future use" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone<span class="text-red">*</span> :</label>
+                    <input id="phone" name="phone" type="text" class="form-control" placeholder="Your Telephone Number"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email :</label>
+                    <input id="email" name="email" type="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="arrival_date" class="form-label">Arrival date<span class="text-red">*</span> :</label>
+                    <input id="arrival_date" name="arrival_date" type="date" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="departure_date" class="form-label">Departure date <span
+                            class="text-red">*</span>:</label>
+                    <input id="departure_date" name="departure_date" type="date" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="room_type" class="form-label">Room Type<span class="text-red">*</span> :</label>
+                    <select id="room_type" name="room_type" class="form-control" required>
+                        <option>Select Room Type</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="semi-luxury">Semi Luxury</option>
+                        <option value="ac">A/C</option>
+                        <option value="no_av">Non A/C</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lk_resident" class="form-label">Resident of Sri Lanka :</label>
+                    <input id="lk_resident" name="lk_resident" type="radio" value="yes" />Yes
+                    <input name="lk_resident" type="radio" value="no" />No
+                </div>
+                <div class="form-group">
+                    <label for="Country" class="form-label">Country :</label>
+                    <input id="Country" name="Country" list="countries" type="text" class="form-control" />
+                    <datalist id="countries">
+                        <option value="Afghanistan" />
+                        <option value="Albania" />
+                        <option value="Algeria" />
+                        <option value="American Samoa" />
+                        <option value="Andorra" />
+                        <option value="Angola" />
+                        <option value="Anguilla" />
+                        <option value="Antarctica" />
+                        <option value="Antigua and Barbuda" />
+                    </datalist>
+                </div>
+                <div class="form-group" required>
+                    <label for="n_adults" class="form-label">Number of adults<span class="text-red">*</span> :</label>
+                    <input id="n_adults" name="n_adults" type="number" min="1" max="10" value="1"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="n_children" class="form-label">Number of children :</label>
+                    <input id="n_children" name="n_children" type="number" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="comment" class="form-label">Questions / Comments :</label>
+                    <textarea id="comment" name="comment" class="form-control"></textarea>
+                </div>
+                <div class="formphone-group">
+                    <input name="agree" type="checkbox" required />
+                    <span>I agree with terms and conditions<span class="text-red">*</span></span>
+                </div>
+            </fieldset>
+            <button class="form-buttons btn btn-green" type="submit">Submit</button>
+            <button class="form-buttons btn btn-red" type="reset">Reset</button>
+        </form>
+    </div>
 </body>
 
 </html>
