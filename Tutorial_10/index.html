@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Valentines Flowers - Order your flowers online</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Valentines Flowers</h1>
+        <section id="products">
+            <div class="product">
+                <img src="images/white.jpeg" alt="White Flower">
+                <p class="description">
+                    White Bouquet
+                </p>
+                <p class="price">
+                    £24
+                </p>
+            </div>
+            <div class="product">
+                <img src="images/pink.jpeg" alt="White Flower">
+                <p class="description">
+                    White Bouquet
+                </p>
+                <p class="price">
+                    £24
+                </p>
+            </div>
+            <div class="product">
+                <img src="images/red.jpeg" alt="White Flower">
+                <p class="description">
+                    White Bouquet
+                </p>
+                <p class="price">
+                    £24
+                </p>
+            </div>
+            <div class="labelOrder">Your Order:
+                <div id="orderDescription"></div>
+                <div class="product" id="order">
+                    <img src="images/white.jpeg" alt="White Flower">
+                    <p class="description">
+                        White Bouquet
+                    </p>
+                    <p class="price">
+                        £24
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="options">
+            <form>
+                <label for="bouquetOptions">Bouquet Options</label>
+                <select id="bouquetOptions" onchange=CheckOptions(this.form)>
+                    <option value="">Please Select</option>
+                    <option value="withChampagne">withChampagne</option>
+                    <option value="extra">extra</option>
+                    <option value="extraWithChampagne">extraWithChampagne</option>
+                </select>
+                <label for="colour">Colour</label>
+                <input id="colour" name="colour" type="radio" value="white">White
+                <input id="colour" name="colour" type="radio" value="pink">Pink
+                <input id="colour" name="colour" type="radio" value="red">Red
+                <button type="reset">Clear your order</button>
+                <button type="button">Place your order</button>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>
